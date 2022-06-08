@@ -23,8 +23,8 @@ public class ZookeeperBlockadeCluster extends ZookeeperCluster {
             return blockade;
 
         var containers = new ArrayList<BlockadeContainer>();
-        for (var i = 0; i < servers.size(); i++){
-            var server = servers.get(i);
+        for (var i = 0; i < Servers.size(); i++){
+            var server = Servers.get(i);
 
             var sj = new StringJoiner(" ");
             sj.add(String.format(
@@ -33,11 +33,11 @@ public class ZookeeperBlockadeCluster extends ZookeeperCluster {
                     server.IsObserver ? ":observer" : "",
                     server.Port));
 
-            for (var j = 0; j < servers.size(); j++){
+            for (var j = 0; j < Servers.size(); j++){
                 if (i == j)
                     continue;
 
-                var neighbour = servers.get(j);
+                var neighbour = Servers.get(j);
                 sj.add(String.format("server.%d=%s:2888:3888%s;%d",
                         neighbour.ServerId,
                         neighbour.Address,

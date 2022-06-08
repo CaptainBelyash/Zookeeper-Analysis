@@ -5,26 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Blockade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/BlockadeContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/BlockadeHttpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/Requests/AddPartitionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/Requests/BlockadeContainerRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/Requests/ChangeNetworkStateRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/Requests/CreateBlockadeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Client/Requests/ExecuteActionRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Enums/BlockadeAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Blockade/Enums/NetworkState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperBlockadeCluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperCluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/NodeState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperJMXClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperNodeMetrics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperBlockadeCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperBlockadeCluster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperCluster.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,16 +22,28 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="2A9TckDuZTrGQpMW3oYU3vSDk6P" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -102,13 +102,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>21</line>
+          <line>35</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
