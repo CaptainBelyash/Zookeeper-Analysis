@@ -16,9 +16,11 @@ public class Main {
         // broken blockades, restart daemon and kill all broken zookeeper containers manually if this not empty
         blockadeClient.GetAllBlockades();
 
-        var leaderDownScenario = new OnlyLeaderDownScenario(blockadeClient, 20);
+        //var leaderDownScenario = new OnlyLeaderDownScenario(blockadeClient, 20);
 
-        var result = leaderDownScenario.GetElectionTimesByNodeCountsInterval(3, 15, 2);
+
+        var quorumDownScenario = new OnlyLeaderDownScenario(blockadeClient, 20);
+        var result = quorumDownScenario.GetElectionTimesByNodeCount(3);
         PrintToFile(result, "OnlyLeaderDownScenario.json");
     }
 }
