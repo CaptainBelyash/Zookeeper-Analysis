@@ -1,6 +1,6 @@
 package Zookeeper.JMXClient;
 
-public enum NodeState {
+public enum ServerState {
     LEADER("Leader", "leading"),
     FOLLOWER("Follower", "following"),
     OBSERVER("Observer", "observing"),
@@ -9,13 +9,13 @@ public enum NodeState {
     private final String role;
     private final String state;
 
-    NodeState(String role, String state)
+    ServerState(String role, String state)
     {
         this.role = role;
         this.state = state;
     }
 
-    public static NodeState GetByState(String state) throws Exception {
+    public static ServerState GetByState(String state) throws Exception {
         switch (state){
             case "leading":
                 return LEADER;

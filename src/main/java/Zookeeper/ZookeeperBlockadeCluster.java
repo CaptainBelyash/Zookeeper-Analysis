@@ -10,17 +10,23 @@ import java.util.StringJoiner;
 public class ZookeeperBlockadeCluster extends ZookeeperCluster {
     private Blockade blockade;
 
-    public ZookeeperBlockadeCluster(int serversCount) {
+    public ZookeeperBlockadeCluster(int serversCount, String blockadeName) {
         super(serversCount);
+        SetBlockade(blockadeName);
     }
 
-    public ZookeeperBlockadeCluster(int quorumServerCount, int observerServerCount) {
+    public ZookeeperBlockadeCluster(int quorumServerCount, int observerServerCount, String blockadeName) {
         super(quorumServerCount, observerServerCount);
+        SetBlockade(blockadeName);
     }
 
-    public Blockade GetBlockade(String name){
+    public Blockade GetBlockade(){
+        return blockade;
+    }
+
+    private void SetBlockade(String name){
         if (blockade != null)
-            return blockade;
+            return;
 
         var containers = new ArrayList<BlockadeContainer>();
         for (var i = 0; i < Servers.size(); i++){
@@ -49,10 +55,12 @@ public class ZookeeperBlockadeCluster extends ZookeeperCluster {
             environment.put("ZOO_MY_ID", String.valueOf(server.ServerId));
             environment.put("ZOO_SERVERS", sj.toString());
 
+            var extraCfgString = "metricsProvider.className=org.apache.zookeeper.metrics.prometheus.PrometheusMetricsProvider\n";
             if (server.IsObserver)
-                environment.put("ZOO_CFG_EXTRA", "peerType=observer");
+                extraCfgString += "peerType=observer\n";
+            environment.put("ZOO_CFG_EXTRA",extraCfgString);
 
-            // Environment variables for monitoring
+            // Environment variables for JMX monitoring
             environment.put("JMXPORT", "4048");
 
             // In theory, these settings are default.
@@ -77,6 +85,5 @@ public class ZookeeperBlockadeCluster extends ZookeeperCluster {
         }
 
         blockade = new Blockade(name, containers.toArray(new BlockadeContainer[0]));
-        return blockade;
     }
 }

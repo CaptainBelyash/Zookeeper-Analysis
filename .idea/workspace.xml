@@ -4,13 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/NodeState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperJMXClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperNodeMetrics.java" afterDir="false" />
+    <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="Zookeeper-Analysis jmx client done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/CriticalQuorumDownTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/EnsembleWithObserverTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/ArrayUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utils/JSONtoFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/NodeState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ServerState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperJMXClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperJMXClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/JMXClient/ZookeeperNodeMetrics.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperBlockadeCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperBlockadeCluster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperCluster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Zookeeper/ZookeeperCluster.java" afterDir="false" />
     </list>
@@ -84,6 +88,14 @@
       <option name="presentableId" value="Default" />
       <updated>1654420888455</updated>
     </task>
+    <task id="LOCAL-00001" summary="Zookeeper-Analysis jmx client done">
+      <created>1654727207582</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654727207582</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,15 +109,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Main.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Zookeeper-Analysis jmx client done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zookeeper-Analysis jmx client done" />
   </component>
 </project>
