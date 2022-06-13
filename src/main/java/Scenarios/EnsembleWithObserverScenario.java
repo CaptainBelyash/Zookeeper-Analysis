@@ -10,31 +10,31 @@ import Zookeeper.ZookeeperBlockadeCluster;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import static Utils.JSONtoFile.PrintToFile;
-
-public class OnlyLeaderDownScenario {
-    private final String baseTestName = "OnlyLeaderDown%d";
+public class EnsembleWithObserverScenario {
+    private final String baseTestName = "WithObservers%d";
     private final BlockadeHttpClient blockadeClient;
+    private final int quorumSize;
     private final int testCount;
     private final int heartbeatTime = 7000;
 
-    public OnlyLeaderDownScenario(BlockadeHttpClient blockadeClient, int testCount){
+    public EnsembleWithObserverScenario(BlockadeHttpClient blockadeClient, int quorumSize, int testCount){
         this.blockadeClient = blockadeClient;
+        this.quorumSize = quorumSize;
         this.testCount = testCount;
     }
 
-    public void Execute(int minNodesCount, int maxNodesCount, int step) throws Exception {
+    public void Execute(int maxObserversCount) throws Exception {
         var result = new HashMap<Integer, ArrayList<ArrayList<Long>>>();
 
-        for (var i=minNodesCount; i <= maxNodesCount; i+=step) {
+        for (var i = 0; i <= maxObserversCount + 1; i++) {
             result.put(i, GetElectionTimesByNodeCount(i));
         }
 
-        JSONtoFile.PrintToFile(result, "OnlyLeaderDies.json");
+        JSONtoFile.PrintToFile(result, "EnsembleWithObservers.json");
     }
 
-    public ArrayList<ArrayList<Long>> GetElectionTimesByNodeCount(int nodesCount) throws Exception {
-        var cluster = new ZookeeperBlockadeCluster(nodesCount, String.format(baseTestName, nodesCount));
+    public ArrayList<ArrayList<Long>> GetElectionTimesByNodeCount(int observersCount) throws Exception {
+        var cluster = new ZookeeperBlockadeCluster(quorumSize, observersCount, String.format(baseTestName, observersCount));
         var blockade = cluster.GetBlockade();
 
         var result = new ArrayList<ArrayList<Long>>();
@@ -46,7 +46,7 @@ public class OnlyLeaderDownScenario {
             Thread.sleep(heartbeatTime);
 
             for (var i=0; i < testCount; i++) {
-                System.out.printf("Only leader down with %d nodes. Test %d/%d\n", nodesCount, i + 1, testCount);
+                System.out.printf("Observers scenario with %d observers. Test %d/%d\n", observersCount, i + 1, testCount);
 
                 String leader = null;
                 // in case when new leader didn't crown
