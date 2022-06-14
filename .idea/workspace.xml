@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="Zookeeper-Analysis critical quorum partition test">
+    <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="Zookeeper-Analysis Simple scenario checks done">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/PartitionScenario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" afterDir="false" />
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654865667100</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Zookeeper-Analysis Simple scenario checks done">
+      <created>1655182370000</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655182370000</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,7 +126,8 @@
     <MESSAGE value="Zookeeper-Analysis jmx client done" />
     <MESSAGE value="Zookeeper-Analysis only leader partition test" />
     <MESSAGE value="Zookeeper-Analysis critical quorum partition test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zookeeper-Analysis critical quorum partition test" />
+    <MESSAGE value="Zookeeper-Analysis Simple scenario checks done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zookeeper-Analysis Simple scenario checks done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -2,20 +2,9 @@ package Scenarios;
 
 import Blockade.Client.BlockadeHttpClient;
 import Blockade.Enums.NetworkState;
-import Utils.ArrayUtils;
-import Zookeeper.JMXClient.ServerState;
-import Zookeeper.JMXClient.ZookeeperJMXClient;
 import Zookeeper.ZookeeperBlockadeCluster;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
-import org.apache.zookeeper.server.ServerStats;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Objects;
-
-import static Utils.JSONtoFile.PrintToFile;
 
 public class SimpleScenario {
     private final BlockadeHttpClient blockadeClient;
@@ -33,10 +22,8 @@ public class SimpleScenario {
         var blockade = cluster.GetBlockade();
         blockadeClient.GetAllBlockades();
 
-        ZookeeperJMXClient jmxClient = null;
         try{
             blockadeClient.CreateBlockade(blockade);
-            jmxClient = new ZookeeperJMXClient(cluster);
 
             blockadeClient.ChangeNetworkState(blockade, cluster.GetServerNames(), clusterNetworkState);
 
@@ -62,15 +49,7 @@ public class SimpleScenario {
             }
         }
         finally {
-            try {
-                assert jmxClient != null;
-                jmxClient.Close();
-            }
-            // Sometimes jmxClient closing throws an exception.
-            // We need to Destroy Blockade after every use, otherwise we must manually drop the docker containers
-            finally {
-                blockadeClient.DestroyBlockade(blockade);
-            }
+            blockadeClient.DestroyBlockade(blockade);
         }
     }
 }
