@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="Zookeeper-Analysis critical quorum partition test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/CriticalQuorumDownTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/EnsembleWithObserverTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/EnsembleWithObserverScenario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
