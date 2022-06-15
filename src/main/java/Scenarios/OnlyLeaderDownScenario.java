@@ -7,13 +7,14 @@ import Zookeeper.JMXClient.ServerState;
 import Zookeeper.JMXClient.ZookeeperJMXClient;
 import Zookeeper.ZookeeperBlockadeCluster;
 
+import javax.management.InstanceNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 import static Utils.JSONtoFile.PrintToFile;
 
 public class OnlyLeaderDownScenario {
-    private final String baseTestName = "OnlyLeaderDown%d";
+    private final String baseTestName = "Leader-Down%d";
     private final BlockadeHttpClient blockadeClient;
     private final int testCount;
     private final int heartbeatTime = 7000;
@@ -36,6 +37,7 @@ public class OnlyLeaderDownScenario {
     public ArrayList<ArrayList<Long>> GetElectionTimesByNodeCount(int nodesCount) throws Exception {
         var cluster = new ZookeeperBlockadeCluster(nodesCount, String.format(baseTestName, nodesCount));
         var blockade = cluster.GetBlockade();
+        blockadeClient.GetAllBlockades();
 
         var result = new ArrayList<ArrayList<Long>>();
         ZookeeperJMXClient jmxClient = null;
@@ -68,7 +70,13 @@ public class OnlyLeaderDownScenario {
                     Thread.sleep(heartbeatTime / 2);
                 }
 
-                result.add(jmxClient.GetLastElectionTimeTaken());
+                try{
+                    result.add(jmxClient.GetLastElectionTimeTaken());
+                }
+                catch (InstanceNotFoundException e){
+
+                }
+
                 blockadeClient.RemoveAllPartitions(blockade);
                 Thread.sleep(heartbeatTime);
             }
@@ -84,6 +92,7 @@ public class OnlyLeaderDownScenario {
                 blockadeClient.DestroyBlockade(blockade);
             }
         }
+        JSONtoFile.PrintToFile(result, String.format("result%d.json", nodesCount));
         return result;
     }
 }

@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616c8405-e334-41eb-8b89-9e92b39b9ea6" name="Changes" comment="Zookeeper-Analysis Simple scenario checks done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenarios/PartitionScenario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/SimpleScenario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,16 +127,5 @@
     <MESSAGE value="Zookeeper-Analysis critical quorum partition test" />
     <MESSAGE value="Zookeeper-Analysis Simple scenario checks done" />
     <option name="LAST_COMMIT_MESSAGE" value="Zookeeper-Analysis Simple scenario checks done" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Scenarios/OnlyLeaderDownScenario.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
