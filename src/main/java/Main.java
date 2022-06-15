@@ -1,14 +1,15 @@
 import Blockade.Client.BlockadeHttpClient;
 import Blockade.Enums.NetworkState;
-import Scenarios.EnsembleWithObserverScenario;
-import Scenarios.OnlyLeaderDownScenario;
-import Scenarios.PartitionScenario;
-import Scenarios.SimpleScenario;
+import Scenarios.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
 
         var blockadeClient = new BlockadeHttpClient("localhost", 5000);
+
+        var capTheoremScenario = new CapTheoremCheckPlace(blockadeClient);
+        capTheoremScenario.Execute();
+
 //        var partScenario = new PartitionScenario(blockadeClient);
 //        partScenario.Execute(5);
 
@@ -21,9 +22,9 @@ public class Main {
 //        var onlyLeaderDies = new OnlyLeaderDownScenario(blockadeClient, 10);
 //        onlyLeaderDies.Execute(3, 5, 2);
 //
-        var onlyLeaderDies = new OnlyLeaderDownScenario(blockadeClient, 100);
-        onlyLeaderDies.Execute(5, 5, 2);
-        onlyLeaderDies.Execute(11, 11, 2);
+//        var onlyLeaderDies = new OnlyLeaderDownScenario(blockadeClient, 100);
+//        onlyLeaderDies.Execute(5, 5, 2);
+//        onlyLeaderDies.Execute(11, 11, 2);
 //
 //        var observersScenario = new EnsembleWithObserverScenario(blockadeClient, 5, 10);
 //        observersScenario.Execute(5);
